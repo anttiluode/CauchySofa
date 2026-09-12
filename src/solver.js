@@ -103,7 +103,7 @@
     const s=ev.map(v=>Math.sqrt(Math.max(0,v))).sort((a,b)=>b-a);
     const max=s[0]||0, threshold=max*1e-3;
     const retained=s.filter(v=>v>threshold && v>1e-12);
-    return {singularValues:s,effectiveRank:retained.length,conditionEstimate:retained.length?max/retained[retained.length-1]:Infinity};
+    return {singularValues:s,effectiveRank:retained.length,conditionEstimate:retained.length<cols?Infinity:max/retained[retained.length-1]};
   }
   function xorshift(state){
     let x=state.rngState|0; if(!x)x=1; x^=x<<13; x^=x>>>17; x^=x<<5; state.rngState=x|0; return ((x>>>0)+0.5)/4294967296;
