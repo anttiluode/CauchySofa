@@ -1,0 +1,5 @@
+<!doctype html><meta charset="utf-8"><title>CauchySofa tests</title>
+<style>body{font:16px system-ui;background:#0d1117;color:#e6edf3;padding:24px}.pass{color:#3fb950}.fail{color:#f85149}</style>
+<h1>CauchySofa deterministic tests</h1><pre id="out"></pre>
+<script src="../src/physics.js"></script><script src="../src/solver.js"></script><script src="../src/render.js"></script><script src="../src/app.js"></script><script src="test.js"></script>
+<script>const out=document.getElementById('out'); const r=CauchyTests.run({log:s=>out.textContent+=s+'\n'}); document.body.className=r.ok?'pass':'fail';</script>
