@@ -90,6 +90,7 @@
     const d=S.singularDiagnostics(J,4,3);
     assert(d.effectiveRank===2, `rank ${d.effectiveRank}`);
     assert(d.singularValues[0] >= d.singularValues[1] && d.singularValues[2] < 1e-8, 'ordered singular values');
+    assert(d.conditionEstimate===Infinity, 'rank-deficient condition estimate should be infinity');
   });
 
   test('linear step respects trust radius and exact forward accounting', () => {
